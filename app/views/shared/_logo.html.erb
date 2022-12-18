@@ -1,0 +1,9 @@
+<div class="home-logo">
+  <% if controller_name == 'pages' && action_name == 'home' %>
+    <%= image_tag("lion-logo0.png", id:"home-logo-button") %>
+  <% else %>
+    <%= link_to :root do %>
+      <%= image_tag ("lion-logo0.png") %>
+    <% end %>
+  <% end %>
+</div>

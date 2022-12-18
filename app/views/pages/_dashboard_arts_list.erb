@@ -1,0 +1,29 @@
+<div class="tattoos-list">
+  <% @arts.each do |art| %>
+    <div class="tattoo-list-element">
+      <div class="tattoo-list-element-image lightbox-img">
+      <% if art.photos.first %>
+        <%= cl_image_tag art.photos.first.key, crop: :fill, id:"tattoo-dashboard-picture" %>
+      <% end %>
+      </div>
+      <div class="tattoo-list-element-content">
+      <div class="tattoo-list-element-infos">
+        <div class="tattoo-list-element-name">
+          <%= art.name %>
+        </div>
+        <div class="tattoo-list-element-description">
+        <%= art.description %>
+        </div>
+      </div>
+      <div class="tattoo-list-element-actions">
+        <%= link_to edit_art_path(art.id), class:"custom-btn-success" do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to art_path(art.id), class:"custom-btn-danger", method: 'delete', data: { confirm: 'Are you sure?' } do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>

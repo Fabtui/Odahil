@@ -1,0 +1,45 @@
+.contact-create-container {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-create-content {
+  padding: 60px 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h3 {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+  #contact-signature {
+    text-align: right;
+  }
+}
+
+.contact-create-back-button {
+  padding-top: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media screen and (max-width: 750px) {
+  .contact-create-content {
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h3 {
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+    #contact-signature {
+      text-align: right;
+  }
+ }
+}

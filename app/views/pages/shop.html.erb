@@ -1,0 +1,26 @@
+<div class="shop-page-container">
+  <h2 class='text-center title'>LE SHOP</h2>
+  <div class="shop-container">
+    <div class="shop-picture-container">
+      <%= image_tag('krysalid-shop.png') %>
+    </div>
+    <div class="shop-content">
+      <h4>Atelier Krysalid: Les artistes, de l’Atelier Krysalid, sont principalement artistes – tatoueurs. Pour pratiquer leur art dans les meilleures conditions, l’Atelier est principalement un salon privé, où l’accès devient réservé pour les clients de nos artistes – résidents.</h4>
+      <div class="contact-link">
+        <%= link_to "Prendre rendez-vous", new_contact_path, id:"contact-link" %>
+      </div>
+      <div class="shop-content-location">
+      <h2><a href="https://atelierkrysalid.fr/" target="_blanck"> ATELIER KRYSALID </a><br>
+        Coworking pour artistes <br>
+          <a href="https://www.google.fr/maps/place/166+Rue+Vend%C3%B4me,+69003+Lyon/@45.7624593,4.8438707,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4ea5f461e747d:0xac00289447b89820!8m2!3d45.7624593!4d4.8460594" target="_blanck">
+            <div class="shop-location">
+            <i class="fas fa-map-pin"></i>
+              166 rue vendôme,<br>69003 Lyon.<br>Métro B, Place Guichard.
+            </div>
+          </a>
+        </h2>
+        <div class="mapbox-container"></div>
+      </div>
+    </div>
+  </div>
+</div>

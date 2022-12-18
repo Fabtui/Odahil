@@ -1,0 +1,165 @@
+.profile-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 50px 10% 20px 10%;
+  h1 {
+    font-weight: 300;
+  }
+  img {
+    border-radius: 5px;
+    border: 1px solid black;
+    max-width: 40vw;
+    height: auto;
+    object-fit: cover;
+    max-height: 60vh;
+  }
+}
+
+.profile-content {
+  display: flex;
+  margin: 10vh 0;
+}
+
+.profile-picture {
+  height: 60vh;
+  box-shadow: 4px 4px 10px black;
+}
+
+.profile-content-text {
+  opacity: 0;
+  padding: 10%;
+  transition: 1s;
+  span {
+    text-align: right;
+    width: 100%;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+  }
+  h2 {
+    font-weight: 300;
+    padding-bottom: 12px;
+  }
+  a {
+    color: rgba(255, 255, 255, 0.815);
+    font-weight: 600;
+    &:hover {
+      color: white;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+  }
+}
+
+.horizontal-image {
+  padding: 5%;
+}
+
+.profile-contact-link {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  a {
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+}
+
+  .align-left {
+    margin-right: 20px;
+  }
+
+  .align-right {
+    float: right;
+    margin-left: 20px;
+  }
+
+  .slide-in {
+    opacity: 0;
+    transition: all .5s;
+  }
+
+  .align-left.slide-in {
+    transform: translateX(-30%) scale(0.95);
+  }
+
+  .align-right.slide-in {
+    transform: translateX(30%) scale(0.95);
+  }
+
+  .slide-in.active {
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+  }
+
+  // ----------------------CORNERS--------------------------------
+.profile-content-text {
+  h2 {
+    position: relative;
+    font-size: 20px;
+    line-height: 2rem;
+  }
+  h2:before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: -16px;
+    left: -16px;
+    z-index:-1;
+    border-left: 1px solid $white;
+    border-top: 1px solid $white;
+  }
+  h2:after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    right: -16px;
+    bottom: 0px;
+    z-index:-1;
+    border-right: 1px solid $white;
+    border-bottom: 1px solid $white;
+  }
+}
+  // ------------------------RESPONSIVE---------------------------
+
+  @media screen and (max-width: 1400px) {
+    .profile-content-text {
+      padding: 8%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+  .profile-container {
+    padding: 30px 10% 10px 10%;
+    img {
+      max-width: 80vw;
+      height: 400px;
+    }
+  }
+  #odahil-profile-pic {
+    margin-left: 20px;
+  }
+  .profile-picture {
+    margin-bottom: 40px;
+  }
+  .profile-content {
+    display: block;
+    margin: 0;
+      h2 {
+        font-size: 16px;
+        line-height: 1.5rem;
+      }
+  }
+  .profile-content-text {
+    padding: 30px;
+  }
+  .profile-contact-link {
+    margin-top: 52px;
+    height: auto;
+  }
+  .align-right {
+    margin-bottom: 10vh;
+  }
+}

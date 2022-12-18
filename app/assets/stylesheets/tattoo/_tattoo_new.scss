@@ -1,0 +1,49 @@
+.new-tattoo-container {
+  padding: 80px 10% 40px 10%;
+  text-align: center;
+}
+
+.new-tattoo-form {
+  text-align: left;
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px
+}
+
+.tattoo-new-button {
+  display: flex;
+  padding: 0 30%;
+  justify-content: space-around;
+  margin-top: 80px;
+  margin-bottom: 32px;
+}
+
+.photo-upload-container {
+  text-align: center;
+  img {
+    margin: 0 auto;
+    max-height: 250px;
+    width: auto;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .new-tattoo-container {
+    padding: 120px 20px 40px 20px;
+    margin-bottom: 24px;
+    h1 {
+      font-size: 28px;
+    }
+  }
+.new-tattoo-form {
+    grid-template-columns: 1fr;
+  }
+  .tattoo-new-button {
+    padding: 0;
+  }
+  .new-tattoo-form-section1 {
+    margin-bottom: 80px;
+  }
+}

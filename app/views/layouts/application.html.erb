@@ -10,9 +10,17 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
-    <%= yield %>
+  <body>
+    <main>
+      <%= render 'shared/navbar_large_screen' %>
+      <%= render 'shared/navbar_small_screen' %>
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+    </main>
+    <footer class="footer-distributed">
+      <%= render 'shared/footer' %>
+    </footer>
   </body>
+  <!-- Initialize Swiper -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 </html>

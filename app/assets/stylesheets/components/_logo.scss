@@ -1,0 +1,25 @@
+.home-logo {
+  width: 50px;
+  margin-left: 24px;
+  img {
+    width: 50px;
+    z-index: 999;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .home-logo {
+    margin-left: 0;
+    img {
+      position: fixed;
+      margin-top: 20px;
+      margin-left: 20px;
+      width: 40px;
+      z-index: 99999999;
+    }
+  }
+}
