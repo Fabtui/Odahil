@@ -1,0 +1,21 @@
+
+<div class="index-tattoo-container">
+
+  <div class="filter-button">
+    <i class="fa fa-filter"></i>
+    <h5>Filtrer</h5>
+  </div>
+  <div class="filter-container hide-filter">
+    <% @styles.each do |style| %>
+      <button class="custom-btn style-button"><%= style %></button>
+    <% end %>
+  </div>
+
+  <div class="tattoo-card-container">
+    <% @tattoos.each do |tattoo| %>
+      <%= cache tattoo do %>
+        <%= render 'index_tattoo_card', tattoo:tattoo %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
