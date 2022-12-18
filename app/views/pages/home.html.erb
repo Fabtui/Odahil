@@ -1,2 +1,33 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-page-container">
+  <div class="home-page-content">
+    <h1 id="home-title">ODAHIL TATTOO</h1>
+  </div>
+</div>
+<div class="threejs" id="three">
+</div>
+
+<%= render 'home_1' %>
+
+<div class="back-image"></div>
+
+<div class="profile-container">
+  <%= render 'home_2' %>
+  <%= render 'home_carousel' %>
+  <%= render 'home_3' %>
+</div>
+
+<%= render 'insta' %>
+
+<div class="profile-container">
+  <%= render 'home_4' %>
+</div>
+
+
+<div>
+  <% flash.each do |key, value| %>
+    <div>
+      <a href="#" data-dismiss="alert">×</a>
+        <%= value %>
+    </div>
+  <% end %>
+</div>

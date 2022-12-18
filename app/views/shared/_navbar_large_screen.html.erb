@@ -1,0 +1,41 @@
+<div id="navbar-large-screen">
+  <%= render 'shared/logo' %>
+
+  <nav class="navbar_large-container">
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == "tattoos" && action_name == "index" %>">
+      <h5><%= link_to 'Gallerie', tattoos_path %></h5>
+    </div>
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'arts' && action_name == 'index' %>">
+      <h5><%= link_to 'Artworks', arts_path %></h5>
+    </div>
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'pages' && action_name == 'shop' %>">
+      <h5><%= link_to 'Shop', pages_shop_path %></h5>
+    </div>
+    <% if user_signed_in? %>
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'contacts' && action_name == 'index' %>">
+      <h5><%= link_to 'Messages', contacts_path %></h5>
+    </div>
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'pages' && action_name == 'dashboard' %>">
+      <h5><%= link_to 'Admin', pages_dashboard_path %></h5>
+    </div>
+    <% else %>
+      <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'contacts' && action_name == 'new' %>">
+        <h5><%= link_to 'Contact', new_contact_path %></h5>
+      </div>
+    <% end %>
+    </ul>
+  </nav>
+
+  <div class="sign-in-link">
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fas fa-sign-out-alt"></i>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path do %>
+        <i class="fas fa-sign-in-alt hidden-link"></i>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

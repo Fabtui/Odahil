@@ -1,0 +1,45 @@
+<div class="tattoos-list">
+  <% @tattoos.each do |tattoo| %>
+    <div class="tattoo-list-element">
+      <div class="tattoo-list-element-image lightbox-img">
+      <% if tattoo.photos.first %>
+        <%= cl_image_tag tattoo.photos.first.key, crop: :fill, id:"tattoo-dashboard-picture" %>
+      <% end %>
+      </div>
+      <div class="tattoo-list-element-content">
+      <div class="tattoo-list-element-infos">
+        <div class="tattoo-list-element-name">
+          <%= tattoo.name %>
+          <% if tattoo.on_home_slider %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        </div>
+        <div class="tattoo-list-element-style">
+          <% if tattoo.styles.present? %>
+            <% tattoo.styles.each do |style| %>
+             <h3><%= style.name %></h3>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="tattoo-list-element-date">
+          <%= tattoo.date.strftime("%d %B %Y") %>
+        </div>
+        <div class="tattoo-list-element-customer">
+          Client: <%= tattoo.customer.capitalize %>
+        </div>
+        <div class="tattoo-list-element-description">
+        <%= tattoo.description %>
+        </div>
+      </div>
+      <div class="tattoo-list-element-actions">
+        <%= link_to edit_tattoo_path(tattoo.id), class:"custom-btn-success" do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to tattoo_path(tattoo.id), class:"custom-btn-danger", method: 'delete', data: { confirm: 'Are you sure?' } do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>

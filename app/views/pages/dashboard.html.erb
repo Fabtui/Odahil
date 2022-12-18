@@ -1,0 +1,40 @@
+<div class="dashboard-container">
+  <div class="dashboard-title">
+    <h1>ADMIN DASHBOARD</h1>
+  </div>
+  <div class="dashboard-header-links">
+    <%= link_to visits_index_path do %>
+      Visites: <%= Visit.all.count %>
+    <% end %>
+    <%= link_to 'Advanced', '/admin', class:'custom-btn'%>
+  </div>
+  <div class="dashboard-selection">
+    <div class="dashboard-selection-button select-tattoos active">Tattoos</div>
+    <div class="dashboard-selection-button select-arts">Arts</div>
+  </div>
+  <div class="dashboard-links">
+    <div class="dashboard-tattoos">
+      <%= link_to new_tattoo_path, class:'custom-btn plus-btn' do %>
+        <i class="fa fa-plus"></i>
+      <% end %>
+      <%= render 'dashboard_tattoos_list' %>
+    </div>
+    <div class="dashboard-arts dashboard-hidden">
+      <%= link_to new_art_path, class:'custom-btn plus-btn' do %>
+        <i class="fa fa-plus"></i>
+      <% end %>
+      <%= render 'dashboard_arts_list' %>
+    </div>
+  </div>
+</div>
+
+<div class="preview-box">
+  <div class="details">
+    <div class="details-title"></div>
+    <span class="details-icon fas fa-times"></span>
+  </div>
+  <div class="image-box">
+    <img src="" alt="">
+  </div>
+</div>
+<div class="shadow"></div>

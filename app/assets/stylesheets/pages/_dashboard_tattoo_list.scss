@@ -1,0 +1,110 @@
+.tattoo-list-element {
+  display: flex;
+  width: 100%;
+  background-color: black;
+  margin: 20px 0;
+  color: $white;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+  border: 1px solid $white;
+  border-radius: 5px;
+}
+
+.tattoo-list-element-image {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px 0 0 5px;
+  }
+}
+
+.tattoo-list-element-content {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tattoo-list-element-infos {
+  font-size: 16px;
+  width: auto;
+  min-width: 180px;
+}
+
+.tattoo-list-element-name {
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+}
+
+.tattoo-list-element-name i {
+  transform: translateY(-2px);
+  font-size: 16px;
+  padding: 4px;
+  color: goldenrod;
+}
+
+.tattoo-list-element-style {
+  display: flex;
+  h3 {
+    font-size: 16px;
+    background-color: $white;
+    color: black;
+    padding: 4px;
+    margin: 0;
+    margin-right: 8px;
+    border-radius: 4px;
+  }
+}
+
+
+.tattoo-list-element-actions {
+  padding-bottom: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 60px;
+  a {
+    margin: 8px;
+    color: $white;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .tattoo-list-element-image {
+    width: 100px;
+    min-width: 50px;
+    height: 110px;
+  }
+  .tattoo-list-element-name {
+  font-size: 16px;
+  }
+  .tattoo-list-element-content {
+    padding: 8px;
+    height: 110px;
+  }
+  .tattoo-list-element-infos {
+    font-size: 12px;
+    max-width: 110px;
+    min-width: 166px;
+  }
+  .tattoo-list-element-style {
+    display: none;
+  }
+  .tattoo-list-element-description {
+    display: none;
+  }
+  .tattoo-list-element-onhomepage i {
+    font-size: 12px;
+  }
+  .tattoo-list-element-actions {
+    margin: 0;
+    width: 42px;
+    a {
+      margin: 2px;
+    }
+  }
+}

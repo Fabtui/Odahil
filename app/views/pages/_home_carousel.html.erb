@@ -1,0 +1,20 @@
+<% unless @tattoos.empty? %>
+  <div class="home-swiper">
+    <div class="swiper swiper-container swipper-hidden">
+      <div class="swiper-wrapper">
+        <% @tattoos.each do |tattoo| %>
+          <% if tattoo.on_home_slider && tattoo.photos.attached? %>
+            <div class="swiper-slide">
+              <%= link_to tattoos_path(anchor: tattoo.id) do %>
+                <%= cl_image_tag tattoo.photos.first.key, crop: :fill %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+<% end %>

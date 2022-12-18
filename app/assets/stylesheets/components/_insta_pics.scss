@@ -1,0 +1,118 @@
+#insta-display {
+  margin: 10vh 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transition: all 3s;
+}
+
+.insta-card {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 12px;
+  box-shadow: 0 0 16px black;
+}
+
+.insta-card-content {
+  width: 250px;
+  height: 250px;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.spinner-border {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+}
+
+.insta-card-image {
+  transition: 0.2s;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  filter: grayscale(1);
+
+  img {
+    width: 100%;
+    transition: 0.2s;
+  }
+
+  svg {
+    background: transparent;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    transition: all 0.2s;
+    filter: opacity(0.7)
+  }
+}
+
+.insta-video-card {
+  svg {
+    filter: invert(60%);
+  }
+}
+
+.insta-image-card {
+  .insta-card-info {
+    color: white;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: 0.2s;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 16px;
+    height: 250px;
+    width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h4 {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}
+}
+
+#insta-list-picture {
+  position: relative;
+}
+
+// ---------------------INSTA SWIPER--------------------------------
+
+.insta-swiper-container {
+  display: none;
+  margin-bottom: 60px;
+  .swiper-slide a img {
+      min-height: 0;
+    }
+  .insta-card-image svg {
+    z-index: 999;
+  }
+}
+
+
+// --------------------MEDIA QUERIES--------------------------------
+
+@media screen and (max-width: 750px) {
+  #insta-display {
+    display: none;
+  }
+  .insta-swiper-container {
+    display: block;
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: block !important;
+    }
+  }
+}

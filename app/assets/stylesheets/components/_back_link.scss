@@ -1,0 +1,17 @@
+.back-link {
+  position: absolute;
+  font-size: 24px;
+  top: 100px;
+  left: 40px;
+  a {
+    color: rgb(250, 250, 250);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .back-link {
+    font-size: 20px;
+    top: 80px;
+    left: 32px;
+  }
+}
