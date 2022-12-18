@@ -3,7 +3,6 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 
-console.log('coucou !!');
 
 import Rails from "@rails/ujs";
 import Turbolinks from "turbolinks";
@@ -37,7 +36,6 @@ import { navbarScroll } from "./components/_navbar_scroll_translate";
 import { tattooSelect } from "./components/_tattoo_select";
 
 document.addEventListener('turbolinks:load', () => {
-  console.log('coucou from packs');
   showMenu();
   homeSwiper();
   dashboardLightbox();
