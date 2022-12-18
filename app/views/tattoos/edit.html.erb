@@ -1,0 +1,42 @@
+<div class="new-tattoo-container">
+    <h1>Edit this tattoo</h1>
+  <div class="new-tattoo-form">
+    <div class="new-tattoo-form-section1">
+      <%= simple_form_for @tattoo do |f| %>
+        <%= f.input :name %>
+        <%= f.input :customer %>
+        <%= f.input :date, discard_hour: true,
+                                start_year: Date.today.year - 7,
+                                end_year: Date.today.year,
+                                order: [:day, :month, :year] %>
+        <%= f.input :description, as: :text %>
+        <%= f.input :on_home_slider, id:"new-tattoo-checkbox", label: "En page d'accueil" %>
+        <%= f.association :styles, input_html: { class: 'select2' }  %>
+    </div>
+    <div class="new-tattoo-form-section2">
+        <div class="photo-upload-container">
+          <%= f.input :photos, as: :file, label:"📷 Photo", label_html: { class: 'upload-photo'}, input_html: { class: '1', id:'photo-input', multiple: true }, require: true %>
+          <%= cl_image_tag @tattoo.photos.first.key, width: 300, class: "hidden", id: "photo-preview-1" %>
+        </div>
+        <% comment do %>
+        <div class="photo-upload-container">
+          <%= f.input :photos, as: :file, label:"📷 Photo 2", label_html: { class: 'upload-photo'}, input_html: { class: '2', id:'photo-input', multiple: true } %>
+          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview-2" %>
+        </div>
+        <div class="photo-upload-container">
+          <%= f.input :photos, as: :file, label:"📷 Photo 3", label_html: { class: 'upload-photo'}, input_html: { class: '3', id:'photo-input', multiple: true } %>
+          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview-3" %>
+        </div>
+        <div class="photo-upload-container">
+          <%= f.input :photos, as: :file, label:"📷 Photo 4", label_html: { class: 'upload-photo'}, input_html: { class: '4', id:'photo-input', multiple: true } %>
+          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview-4" %>
+        </div>
+        <% end %>
+    </div>
+      <div class="tattoo-new-button">
+        <%= f.submit "Save", class: "custom-btn" %>
+        <%= link_to "Cancel", pages_dashboard_path , class: "custom-btn-danger" %>
+      </div>
+  </div>
+    <% end %>
+</div>

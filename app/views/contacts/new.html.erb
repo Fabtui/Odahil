@@ -1,0 +1,36 @@
+<div class="contact-new-background"></div>
+<div class="contact-new-container">
+  <div class="contact-new-text">
+    <h4>Envie de parler de ton projet, de prendre un rendez-vous?</h4>
+    <h4>Laisse-moi un message!</h4>
+  </div>
+
+  <div id='contact-button'>
+    <br>
+    <%= mail_to 'odahil@gmail.com', subject: "Bonjour Odahil!", body:'' do %>
+      <h7 class="custom-btn">Par mail</h7>
+    <% end %>
+  </div>
+
+  <div class='contact-form-container'>
+    <input type="checkbox" id="chck1">
+    <label id="chck1-label" class="custom-btn" for="chck1">En direct</label>
+    <div class="tab-content">
+      <div class="contact-new-form">
+        <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+          <%= f.input :name, :required => true, label:"Nom", error: 'Veuillez rentrer votre nom' %>
+          <%= f.input :email, :required => true, error: 'Veuillez rentrer une adresse mail valide'  %>
+          <%= f.input :email_confirmation, :required => true, :label => "Confimer Email", :input_html => {:rel => "tooltip", :title => "Please enter your email address again to prevent typing errors"} %>
+          <div class="invalid-mail invalid-mail-hidden">Veuillez confirmer votre adresse mail</div>
+          <%= f.input :message, :as => :text, :required => true, error: 'Veuillez rentrer votre message'  %>
+          <div id='contact-button'>
+            <br>
+            <%= link_to 'Annuler', root_path, :class=> "custom-btn mr-4" %>
+            <%= f.button :submit, 'Envoyer', :class=> "custom-btn disabled-btn", id:"new-contact-btn" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>

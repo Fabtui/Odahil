@@ -1,0 +1,13 @@
+<div class="tattoo-card">
+  <div class="spinner-border text-light" role="status">
+  </div>
+  <div class="tattoo-card-content">
+    <div class="tattoo-card-image lightbox-img grey-filter" data-id=<%= art.id %>>
+      <%= cl_image_tag art.photos.first.key, crop: :fill, id:"tattoo-list-picture" %>
+      <span id="lines"></span>
+    </div>
+    <div class="tattoo-card-info" id="info-<%= art.id %>">
+      <h4><%= art.name %></h4>
+    </div>
+  </div>
+</div>

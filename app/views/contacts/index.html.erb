@@ -1,0 +1,22 @@
+<div class="messages-container">
+<table class="table" style="color: white;">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Name</th>
+      <th id="th-mail" scope="col">Mail</th>
+      <th scope="col">Message</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= contact.created_at.strftime("%d/%m/%y %H:%M") %></td>
+      <td><%= contact.name %></td>
+      <td id="td-mail"><%= contact.email %></td>
+      <td><%= contact.message %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>

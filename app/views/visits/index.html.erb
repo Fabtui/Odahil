@@ -1,0 +1,9 @@
+<div class="back-link">
+  <%= link_to :back do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+</div>
+<div class="visit-chart odahil-container">
+  <%= area_chart @visits.group(:date).count, xtitle: "Date", ytitle: "Visites", loading: "Loading..." %>
+  <h3 class="text-center">Total visites: <%= Visit.all.count %></h3>
+</div>
