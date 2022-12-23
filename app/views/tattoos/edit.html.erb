@@ -16,21 +16,23 @@
     <div class="new-tattoo-form-section2">
         <div class="photo-upload-container">
           <%= f.input :photos, as: :file, label:"📷 Photo", label_html: { class: 'upload-photo'}, input_html: { class: '1', id:'photo-input', multiple: true }, require: true %>
-          <%= cl_image_tag @tattoo.photos.first.key, width: 300, class: "hidden", id: "photo-preview-1" %>
+           <% if @tattoo.photos.count.positive? && @tattoo.photos.first.key %>
+             <%= cl_image_tag @tattoo.photos.first.key, width: 300, class: "hidden", id: "photo-preview-1" %>
+           <% end %>
         </div>
         <% comment do %>
-        <div class="photo-upload-container">
-          <%= f.input :photos, as: :file, label:"📷 Photo 2", label_html: { class: 'upload-photo'}, input_html: { class: '2', id:'photo-input', multiple: true } %>
-          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview-2" %>
-        </div>
-        <div class="photo-upload-container">
-          <%= f.input :photos, as: :file, label:"📷 Photo 3", label_html: { class: 'upload-photo'}, input_html: { class: '3', id:'photo-input', multiple: true } %>
-          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview-3" %>
-        </div>
-        <div class="photo-upload-container">
-          <%= f.input :photos, as: :file, label:"📷 Photo 4", label_html: { class: 'upload-photo'}, input_html: { class: '4', id:'photo-input', multiple: true } %>
-          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview-4" %>
-        </div>
+          <div class="photo-upload-container">
+            <%= f.input :photos, as: :file, label:"📷 Photo 2", label_html: { class: 'upload-photo'}, input_html: { class: '2', id:'photo-input', multiple: true } %>
+            <%= image_tag "", width: 300, class: "hidden", id: "photo-preview-2" %>
+          </div>
+          <div class="photo-upload-container">
+            <%= f.input :photos, as: :file, label:"📷 Photo 3", label_html: { class: 'upload-photo'}, input_html: { class: '3', id:'photo-input', multiple: true } %>
+            <%= image_tag "", width: 300, class: "hidden", id: "photo-preview-3" %>
+          </div>
+          <div class="photo-upload-container">
+            <%= f.input :photos, as: :file, label:"📷 Photo 4", label_html: { class: 'upload-photo'}, input_html: { class: '4', id:'photo-input', multiple: true } %>
+            <%= image_tag "", width: 300, class: "hidden", id: "photo-preview-4" %>
+          </div>
         <% end %>
     </div>
       <div class="tattoo-new-button">

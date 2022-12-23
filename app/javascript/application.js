@@ -1,8 +1,7 @@
 // Entry point for the build script in your package.json
-import "@hotwired/turbo-rails"
+// import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-
 
 import Rails from "@rails/ujs";
 import Turbolinks from "turbolinks";
@@ -36,6 +35,7 @@ import { navbarScroll } from "./components/_navbar_scroll_translate";
 import { tattooSelect } from "./components/_tattoo_select";
 
 document.addEventListener('turbolinks:load', () => {
+  console.log('turbo');
   showMenu();
   homeSwiper();
   dashboardLightbox();

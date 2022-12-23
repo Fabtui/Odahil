@@ -4,18 +4,18 @@ export const tattooSelect = () => {
     const tattooCards = document.querySelectorAll('.tattoo-card')
     styleButtons.forEach(styleButton => {
       styleButton.addEventListener('click', (e) => {
-        if (e.currentTarget.classList.contains('active-button')) {
-          e.currentTarget.classList.remove('active-button')
+        if (e.currentTarget.classList.contains('active-style-button')) {
+          e.currentTarget.classList.remove('active-style-button')
           showTattoos()
         } else {
-          e.currentTarget.classList.add('active-button')
+          e.currentTarget.classList.add('active-style-button')
           showTattoos()
         }
       })
     })
 
     const showTattoos = () => {
-      const selectedStyles = document.querySelectorAll('.active-button')
+      const selectedStyles = document.querySelectorAll('.active-style-button')
       let styles = []
       selectedStyles.forEach(selectedStyle => {
         styles.push(selectedStyle.innerText.replace(/\s+/g, ''))
@@ -29,7 +29,7 @@ export const tattooSelect = () => {
         }
       })
       // show all tattoos if no filter selected
-      const active = document.querySelector('.active-button')
+      const active = document.querySelector('.active-style-button')
       if (!active) {
         tattooCards.forEach(tattooCard => {
           tattooCard.classList.remove('tattoo-hidden')
