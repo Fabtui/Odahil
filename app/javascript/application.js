@@ -35,7 +35,6 @@ import { navbarScroll } from "./components/_navbar_scroll_translate";
 import { tattooSelect } from "./components/_tattoo_select";
 
 document.addEventListener('turbolinks:load', () => {
-  console.log('turbo');
   showMenu();
   homeSwiper();
   dashboardLightbox();

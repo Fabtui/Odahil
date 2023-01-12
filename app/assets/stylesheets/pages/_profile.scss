@@ -130,19 +130,14 @@
     .profile-content-text {
       padding: 8%;
     }
-    // .profile-content-text {
-    //   padding: 30px;
-
-    //   h2 {
-    //     font-size: 1rem;
-    //   }
-    // }
+    h2 {
+      font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 1200px) {
   .profile-content-text {
     padding: 30px;
-
     h2 {
       font-size: 1rem;
     }
