@@ -4,21 +4,21 @@ export const titleScroll = () => {
     const homeBanner = document.querySelector('.home-page-container')
     title.addEventListener('click', () => {
       window.scroll({
-          top: homeBanner.offsetHeight + 50,
-          behavior: "smooth"
-        });
+        top: homeBanner.offsetHeight + 50,
+        behavior: "smooth"
+      });
     });
   }
 }
 
 export const logoScroll = () => {
-  const logo = document.querySelector('#home-logo-button')
-    if (logo) {
-      logo.addEventListener('click', () => {
-        window.scroll({
-            top: 0,
+  const logo = document.querySelector('.home-logo')
+  if (logo) {
+    logo.addEventListener('click', () => {
+      window.scroll({
+        top: 0,
             behavior: "smooth"
       });
-      })
-    }
+    })
+  }
 }
