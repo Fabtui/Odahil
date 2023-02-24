@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_18_214017) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_16_213916) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,9 +42,32 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_18_214017) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "articles", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "arts", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cart_articles", force: :cascade do |t|
+    t.bigint "cart_id", null: false
+    t.bigint "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_cart_articles_on_article_id"
+    t.index ["cart_id"], name: "index_cart_articles_on_cart_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.date "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -104,6 +127,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_18_214017) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cart_articles", "articles"
+  add_foreign_key "cart_articles", "carts"
   add_foreign_key "tattoo_styles", "styles"
   add_foreign_key "tattoo_styles", "tattoos"
 end
