@@ -11,6 +11,12 @@
     <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'pages' && action_name == 'shop' %>">
       <h5><%= link_to 'Shop', pages_shop_path %></h5>
     </div>
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'articles' && action_name == 'index' %>">
+      <h5><%= link_to 'Boutique', articles_path %></h5>
+    </div>
+    <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'cart' && action_name == 'index' %>">
+      <h5><%= link_to "Panier", cart_index_path %> <span><%= session[:cart] ? session[:cart].count : "" %></span></h5>
+    </div>
     <% if user_signed_in? %>
     <div class="navbar_large_screen_item <%= "item_active" if controller_name == 'contacts' && action_name == 'index' %>">
       <h5><%= link_to 'Messages', contacts_path %></h5>

@@ -1,0 +1,12 @@
+<div class="shop-page-container">
+  <h1>Panier</h1>
+  <% @cart_articles.each do |article| %>
+    <h3><%= article.name %> - <%= article.price %>€</h3>
+
+  <% end %>
+  <br>
+  <h3>Total:</h3>
+  <h3><%= @total %>€</h3>
+  <br>
+  
+</div>

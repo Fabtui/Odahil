@@ -1,0 +1,6 @@
+<div class="shop-page-container">
+  <% @articles.each do |article| %>
+    <h3><%= article.name %> - <%= article.price %>€</h3>
+    <%= link_to 'Add to cart', add_to_cart_path(article.id), method: :post %>
+  <% end %>
+</div>

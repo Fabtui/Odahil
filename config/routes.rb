@@ -11,11 +11,18 @@ Rails.application.routes.draw do
   get 'pages/dashboard'
   get 'pages/shop'
   get 'pages/react'
+  post '/articles/:id', to: 'articles#add_to_cart', as: 'add_to_cart'
+
+
   resources "contacts", only: %i[new create index]
 
   resources :tattoos
 
   resources :arts
+
+  resources :articles, only: ['show', 'index']
+
+  resources :cart, only: ['index']
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
