@@ -9,10 +9,14 @@ class ArticlesController < ApplicationController
     article = Article.find(params[:id])
     if session[:cart]
       session[:cart].push(article.id)
-      redirect_to articles_path, notice: 'Article ajouté à votre panier'
     else
       session[:cart] = [article.id]
-      redirect_to articles_path, notice: 'Article ajouté à votre panier'
     end
+    redirect_to articles_path, notice: 'Article ajouté à votre panier'
+  end
+
+  def remove_to_cart
+    session[:cart].delete_at(session[:cart].find_index(params[:id].to_i))
+    redirect_to cart_index_path, notice: 'Article supprimé de votre panier'
   end
 end

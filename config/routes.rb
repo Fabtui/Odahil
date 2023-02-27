@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'pages/shop'
   get 'pages/react'
   post '/articles/:id', to: 'articles#add_to_cart', as: 'add_to_cart'
+  patch '/articles/:id', to: 'articles#remove_to_cart', as: 'remove_to_cart'
 
 
   resources "contacts", only: %i[new create index]
