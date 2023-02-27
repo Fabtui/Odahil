@@ -1,12 +1,18 @@
 <div class="shop-page-container">
   <h1>Panier</h1>
-  <% @cart_articles.each do |article| %>
-    <h3><%= article.name %> - <%= article.price %>€</h3>
-    <%= link_to 'supprimer', remove_to_cart_path(article.id), method: :patch %>
+
+  <% if @cart_articles.empty? %>
+    <p>Votre panier est vide</p>
+  <% else %>
+    <% @cart_articles.each do |article| %>
+      <h3><%= article.name %> - <%= article.price %>€</h3>
+      <%= link_to 'supprimer', remove_to_cart_path(article.id), method: :patch %>
+    <% end %>
+    <br>
+    <h3>Total:</h3>
+    <h3><%= @total %>€</h3>
+    <br>
+    <%= link_to 'Acheter', purchase_path, method: :patch %>
   <% end %>
-  <br>
-  <h3>Total:</h3>
-  <h3><%= @total %>€</h3>
-  <br>
-  <%= link_to 'Acheter', purchase_path, method: :patch %>
+
 </div>

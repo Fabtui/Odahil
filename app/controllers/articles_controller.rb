@@ -7,17 +7,16 @@ class ArticlesController < ApplicationController
 
   def add_to_cart
     article = Article.find(params[:id])
-    if article.quantity > session[:cart].count(params[:id].to_i)
-      if session[:cart]
+    if session[:cart]
+      if article.quantity > session[:cart].count(params[:id].to_i)
         session[:cart].push(article.id)
       else
-        session[:cart] = [article.id]
+        redirect_to articles_path, alert: "Désolé cet article n'est plus disponible"
       end
-      redirect_to articles_path, notice: 'Article ajouté à votre panier'
     else
-      redirect_to articles_path, alert: "Désolé cet article n'est plus disponible"
+      session[:cart] = [article.id]
     end
-
+      redirect_to articles_path, notice: 'Article ajouté à votre panier'
   end
 
   def remove_to_cart
