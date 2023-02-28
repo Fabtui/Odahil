@@ -3,6 +3,7 @@ Tattoo.destroy_all
 Art.destroy_all
 Style.destroy_all
 TattooStyle.destroy_all
+Article.destroy_all
 
 # ---------------------------------STYLES-------------------------------------------------------
 
@@ -151,6 +152,7 @@ p "#{Art.count} Artworks created"
 
 # p "#{TattooStyle.count} Tattoo Styles created"
 
-# --------------------------------------------------------------------------------------------------
+# ---------------------------------ARTICLES----------------------------------------------------
 
-Article.create!(name: 'poster', price_cents: 9.99, detail: 'Awesome poster!', quantity: 5)
+Article.create!(name: 'poster', price_cents: 999, detail: 'Awesome poster!', quantity: 5)
+p "#{Article.count} Articles created"

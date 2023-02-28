@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_28_090531) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_28_094341) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,6 +66,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_090531) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "article_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_orders_on_article_id"
+  end
+
   create_table "styles", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -113,6 +124,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_090531) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orders", "articles"
   add_foreign_key "tattoo_styles", "styles"
   add_foreign_key "tattoo_styles", "tattoos"
 end

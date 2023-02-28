@@ -1,8 +1,9 @@
 <div class="shop-page-container">
   <% @articles.each do |article| %>
     <% unless article.quantity < 1 %>
-      <h3><%= article.name %> - <%= humanized_money_with_symbol(article.price) %></h3>
+      <h3><%= article.name %> - <%= humanized_money_with_symbol(article.price_cents) %></h3>
       <%= link_to 'Add to cart', add_to_cart_path(article.id), method: :post %>
+      <%= link_to 'Acheter', orders_path(article_id: article.id), method: :post %>
     <% end %>
   <% end %>
 </div>
