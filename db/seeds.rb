@@ -152,3 +152,5 @@ p "#{Art.count} Artworks created"
 # p "#{TattooStyle.count} Tattoo Styles created"
 
 # --------------------------------------------------------------------------------------------------
+
+Article.create!(name: 'poster', price_cents: 9.99, detail: 'Awesome poster!', quantity: 5)
