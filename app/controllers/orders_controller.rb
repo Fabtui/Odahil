@@ -1,23 +1,26 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_user!
-
   def show
-    @order = Order.find(params[:id])
+    @order = current_user.orders.find(params[:id])
   end
 
   def create
-    article = Article.find(params[:article_id])
-    order  = Order.create!(article: article, article_sku: article.id, amount: (article.price_cents), state: 'pending')
+    @cart_articles = session[:cart].map { |id| Article.find(id) }
+    total_amount = @cart_articles.pluck(:price).sum
+    order = Order.new(user: current_user, amount: total_amount, state: 'pending')
+    order.articles = @cart_articles
+    order.save
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
-      line_items: [{
+      line_items: @cart_articles.map do |article|
+        {
         name: article.name,
         # images: [article.photo_url],
-        amount: article.price_cents,
+        amount: (article.price * 100).to_i,
         currency: 'eur',
         quantity: 1
-        }],
+        }
+      end,
         success_url: order_url(order),
         cancel_url: order_url(order)
       )

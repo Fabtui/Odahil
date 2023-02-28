@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
-  has_many :orders
   validates :name, presence: true
-  validates :price_cents, presence: true, numericality: { greater_than: 0 }
+  validates :price, presence: true, numericality: { greater_than: 0 }
   validates :quantity, presence: true, numericality: { greater_than: 0 }
+  has_many :order_articles
+  has_many :orders, through: :order_articles
 end

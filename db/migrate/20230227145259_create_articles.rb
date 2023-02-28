@@ -4,6 +4,7 @@ class CreateArticles < ActiveRecord::Migration[7.0]
       t.string :name
       t.text :detail
       t.integer :quantity
+      t.float :price
 
       t.timestamps
     end

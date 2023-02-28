@@ -12,7 +12,8 @@
     <h3>Total:</h3>
     <h3><%= @total %>€</h3>
     <br>
-    <%= link_to 'Acheter', purchase_path, method: :patch %>
+    <%#= link_to 'Acheter', purchase_path, method: :patch %>
+    <%= link_to 'Acheter', orders_path(articles: @cart_articles), method: :post %>
   <% end %>
 
 </div>

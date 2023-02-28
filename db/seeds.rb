@@ -20,7 +20,7 @@ p "#{Style.count} Styles created"
 # ---------------------------------USERS-------------------------------------------------------
 
 
-User.create!(email: "toto@mail.com", password: "azerty", admin: true)
+User.create!(email: "toto@mail.com", password: "azerty", admin: true, address: "Lyon")
 
 p "#{User.count} users created"
 
@@ -154,5 +154,5 @@ p "#{Art.count} Artworks created"
 
 # ---------------------------------ARTICLES----------------------------------------------------
 
-Article.create!(name: 'poster', price_cents: 999, detail: 'Awesome poster!', quantity: 5)
+Article.create!(name: 'poster', price: 9.99, detail: 'Awesome poster!', quantity: 5)
 p "#{Article.count} Articles created"

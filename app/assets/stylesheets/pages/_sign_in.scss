@@ -1,11 +1,19 @@
 .sign-in-container {
-  padding-top: 10%;
+  padding-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-bottom: 44px;
+  h1 {
+    font-weight: 300;
+    font-size: 2rem;
+  }
 }
 
+.sign-in-content {
+  min-width: 40vw;
+}
 
 @media screen and (max-width: 700px) {
   .sign-in-container {
