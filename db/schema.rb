@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_16_213916) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_28_145951) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,8 +44,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_213916) do
 
   create_table "articles", force: :cascade do |t|
     t.string "name"
-    t.float "price"
+    t.text "detail"
     t.integer "quantity"
+    t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,27 +58,31 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_213916) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cart_articles", force: :cascade do |t|
-    t.bigint "cart_id", null: false
-    t.bigint "article_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_cart_articles_on_article_id"
-    t.index ["cart_id"], name: "index_cart_articles_on_cart_id"
-  end
-
-  create_table "carts", force: :cascade do |t|
-    t.date "date", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "order_articles", force: :cascade do |t|
+    t.bigint "order_id", null: false
+    t.bigint "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_order_articles_on_article_id"
+    t.index ["order_id"], name: "index_order_articles_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "styles", force: :cascade do |t|
@@ -114,6 +119,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_213916) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin"
+    t.string "phone"
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -127,8 +134,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_213916) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "cart_articles", "articles"
-  add_foreign_key "cart_articles", "carts"
+  add_foreign_key "order_articles", "articles"
+  add_foreign_key "order_articles", "orders"
+  add_foreign_key "orders", "users"
   add_foreign_key "tattoo_styles", "styles"
   add_foreign_key "tattoo_styles", "tattoos"
 end

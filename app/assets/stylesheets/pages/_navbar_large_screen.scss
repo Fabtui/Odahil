@@ -52,7 +52,15 @@
   }
 }
 
-
+.cart_navbar_item {
+  position: relative;
+  span {
+    font-size: 12px;
+    position: absolute;
+    top: -4px;
+    right: 4px;
+  }
+}
 
 .item_active {
   a {

@@ -59,6 +59,9 @@ gem 'rails_admin'
 gem 'rails_admin-i18n'
 gem "chartkick"
 gem 'cloudinary'
+gem 'money-rails'
+gem 'stripe'
+gem 'stripe_event'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
