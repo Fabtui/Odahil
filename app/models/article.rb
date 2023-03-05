@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+  has_many_attached :photos
+
   validates :name, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :quantity, presence: true, numericality: { greater_than: 0 }
