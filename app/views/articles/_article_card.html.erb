@@ -1,0 +1,37 @@
+<div class="article-card">
+
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <% article.photos.each_with_index do |photo, index| %>
+        <% if index == 0 %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key, class:"d-block w-100", alt:article.name %>
+          </div>
+        <% else %>
+          <div class="carousel-item">
+            <%= cl_image_tag photo.key, class:"d-block w-100", alt:article.name %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="article-card-infos">
+    <div>
+      <h2><%= article.name %></h2>
+      <p><%= article.detail %></p>
+    </div>
+    <h2 class="article-card-pricing"><%= humanized_money_with_symbol(article.price) %></h2>
+  </div>
+  <div class="article-card-link">
+    <%= link_to 'Add to cart', add_to_cart_path(article.id), method: :post %>
+  </div>
+</div>
