@@ -49,3 +49,71 @@
   }
   }
 }
+
+
+// -----------------------------SWIPPER------------------------------------------
+
+.article-card-swiper .swiper {
+  height: 200px;
+  width: 15vw;
+  min-width: 200px;
+  max-height: 60vh;
+  transition: 4s;
+}
+
+.article-card-swiper .swipper-hidden {
+  transition: 4s;
+  opacity: 0;
+}
+
+.article-card-swiper .swiper-slide {
+  max-height: 60vh;
+  text-align: center;
+  font-size: 18px;
+  background: $black;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.article-card-swiper .swipper-wrapper {
+  max-height: 60vh;
+}
+
+.article-card-swiper .swiper-slide img {
+  display: block;
+  min-width: 100%;
+  object-fit: cover;
+}
+
+.article-card-swiper .swiper-button-prev,
+.article-card-swiper .swiper-button-next {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+@media screen and (max-width: 750px) {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+
+  .article-card-swiper {
+    margin-bottom: 10vh;
+  }
+}

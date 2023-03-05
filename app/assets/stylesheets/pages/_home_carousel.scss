@@ -1,16 +1,16 @@
-.swiper {
+.home-swiper .swiper {
   margin: 40px 0;
   width: 100%;
   max-height: 60vh;
   transition: 4s;
 }
 
-.swipper-hidden {
+.home-swiper .swipper-hidden {
   transition: 4s;
   opacity: 0;
 }
 
-.swiper-slide {
+.home-swiper .swiper-slide {
   max-height: 60vh;
   text-align: center;
   font-size: 18px;
@@ -31,11 +31,11 @@
   align-items: center;
 }
 
-.swipper-wrapper {
+.home-swiper .swipper-wrapper {
   max-height: 60vh;
 }
 
-.swiper-slide a img {
+.home-swiper .swiper-slide a img {
   min-height: 60vh;
   display: block;
   min-width: 100%;

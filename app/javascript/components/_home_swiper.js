@@ -1,5 +1,5 @@
 const homeSwiper = () => {
-  const swiperContainer = document.querySelector('.swiper-container')
+  const swiperContainer = document.querySelector(".home-swiper");
   if (swiperContainer) {
     const swiper = new Swiper('.swiper-container', {
       loop: true,
