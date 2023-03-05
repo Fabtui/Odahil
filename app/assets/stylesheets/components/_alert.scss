@@ -3,6 +3,8 @@
   bottom: 104px;
   right: 16px;
   z-index: 1000;
+  // animation: alert-fadeout 2s ease-in 2s;
+  // animation-fill-mode: forwards;
 }
 
 .alert-error {
@@ -13,22 +15,31 @@ text-align: left;
 }
 
 .alert-alert {
-background-color: #f2dede;
-border-color: #eed3d7;
-color: #b94a48;
-text-align: left;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
 }
 
 .alert-info {
-background-color: #dff0d8;
-border-color: #d6e9c6;
-color: #468847;
-text-align: left;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #884946;
+  text-align: left;
 }
 
 .alert-notice {
-background-color: #dff0d8;
-border-color: #d6e9c6;
-color: #468847;
-text-align: left;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
 }
+
+// @keyframes alert-fadeout {
+//   0% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
