@@ -1,0 +1,51 @@
+.article-card {
+  margin: 20px;
+  width: 15vw;
+  min-width: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.article-card>img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.article-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.article-card p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  color: black;
+}
+
+
+.article-card .article-card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.article-card-link {
+  text-align: center;
+  margin-bottom: 8px;
+  a {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.803);
+    transition: 0.2s;
+  &:hover {
+    color: black;
+  }
+  }
+}
