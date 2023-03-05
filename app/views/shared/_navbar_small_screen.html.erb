@@ -34,6 +34,9 @@
   <% unless controller_name == 'pages' && action_name == 'shop' %>
     <li><%= link_to 'Shop', pages_shop_path, class:'link-line' %></li>
   <% end %>
+  <% unless controller_name == 'articles' && action_name == 'index' %>
+    <li><%= link_to 'Boutique', articles_path, class:'link-line' %></li>
+  <% end %>
     <% if user_signed_in? %>
       <li><%= link_to 'Messages', contacts_path, class:"link-line" %></li>
       <li><%= link_to 'Admin', pages_dashboard_path, class:"link-line" %></li>
