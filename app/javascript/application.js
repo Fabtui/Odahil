@@ -33,6 +33,7 @@ import { instaBeholdAPI } from "./components/_insta_behold_api";
 import { instaOpacityScroll } from "./components/_insta_opacity_scroll";
 import { navbarScroll } from "./components/_navbar_scroll_translate";
 import { tattooSelect } from "./components/_tattoo_select";
+import { alertClose } from "./components/_alert_close";
 
 document.addEventListener('turbolinks:load', () => {
   showMenu();
@@ -55,4 +56,5 @@ document.addEventListener('turbolinks:load', () => {
   instaOpacityScroll();
   navbarScroll();
   tattooSelect();
+  alertClose();
 });
