@@ -30,16 +30,21 @@
 
 
 .article-card .article-card-infos {
-  padding: 16px;
+  padding: 16px 16px 8px 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
 }
 
-.article-card-link {
-  text-align: center;
+.article-card-links {
+  padding: 8px 16px 16px 16px;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 8px;
+  i {
+    font-size: 1.5rem;
+  }
   a {
     font-weight: 500;
     color: rgba(0, 0, 0, 0.803);
