@@ -19,9 +19,11 @@
       <h2><%= article.name %></h2>
       <p><%= article.detail %></p>
     </div>
-    <h2 class="article-card-pricing"><%= humanized_money_with_symbol(article.price) %></h2>
   </div>
-  <div class="article-card-link">
-    <%= link_to 'Add to cart', add_to_cart_path(article.id), method: :post %>
+  <div class="article-card-links">
+    <%= link_to add_to_cart_path(article.id), method: :post do %>
+      <i class="fa fa-cart-plus"></i>
+    <% end %>
+    <h2 class="article-card-pricing"><%= humanized_money_with_symbol(article.price) %></h2>
   </div>
 </div>
